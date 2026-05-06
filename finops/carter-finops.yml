@@ -1,130 +1,65 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Carter's
+providerId: carter
+created: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Retail
+  - Children
+  - Apparel
+  - FinOps
+  - FOCUS
+description: 'FOCUS-aligned FinOps scaffold for Carter''s. No public API pricing or invoice surface is
+  published; meters and FOCUS columns are the recommended starting points for partners that have negotiated
+  private B2B agreements.'
+notes: Billing is private (partner contracts). Reconcile once Carter's publishes API or partner pricing.
+sources:
+  - https://www.carters.com
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-provider: Carter's
-providerId: carter
-publisherName: Carter's
-serviceCategory: API
-created: '2026-05-04'
-modified: '2026-05-04'
-tags:
-  - Retail
-  - Children
-  - Apparel
-  - FinOps
-  - Cost Management
-  - FOCUS
-description: FinOps framework definition for the Carter's API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+publisherName: Carter's, Inc.
+serviceCategory: Retail
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Custom (Partner Contract)
+  billingFrequency: Per-Contract
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
-    - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
-  ServiceName: Carter's
-  ServiceCategory: Developer Tools / API
+  ServiceName: Carter's API
+  ServiceCategory: Retail
   ProviderName: Carter's
-  PublisherName: Carter's
-  InvoiceIssuerName: Carter's
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Carter's, Inc.
+  InvoiceIssuerName: Carter's, Inc.
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
   - name: api_requests
-    description: Count of billable API requests
     unit: request
     aggregation: sum
     dimensions:
-      - api
       - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Carter's API
-    baseURL: https://api.carters.com
-    tags:
-      - Retail
-      - Children
-      - Apparel
-    serviceName: Carter's API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - partner
+principles:
+  - name: Visibility
+    description: Track partner integration consumption through the negotiated reporting surface delivered
+      with the partner agreement; no public usage API is published.
+  - name: Allocation
+    description: Tag partner integration costs to the consuming retail / supply-chain function before
+      issuing chargeback.
+  - name: Optimization
+    description: Batch catalog and order updates; align polling cadence with Carter's published refresh
+      windows to avoid wasted requests.
+  - name: Accountability
+    description: Assign a procurement and IT owner for the Carter's partner relationship; review invoiced
+      partner fees against contractual SLAs.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
