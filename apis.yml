@@ -29,6 +29,8 @@ apis:
     description: >-
       The Carter's API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: DomainSecurity
+    url: security/carter-domain-security.yml
   - type: Website
     url: https://www.carters.com
 maintainers:
