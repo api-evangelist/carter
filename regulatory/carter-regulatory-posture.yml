@@ -1,0 +1,85 @@
+generated: '2026-09-19'
+method: searched
+probe: true
+note: 'Harvest-only pass. Carter''s is a children''s apparel retailer with no developer program. Its storefront
+  www.carters.com (Salesforce Commerce Cloud) answers every anonymous curl with a Cloudflare managed challenge (403),
+  but a browser-class fetch reads the pages, and two signals met the substance bar: the privacy policy publishes
+  a Global Privacy Control commitment and links a OneTrust data-subject request portal. The accessibility statement
+  at /customerservice/accessibility-and-inclusion/ names WCAG 2.1 only as the target of a UserWay widget, with no
+  conformance level, VPAT or report, so accessibility_conformance is NOT recorded (word, not substance). corporate.carters.com
+  carries no legal pages and esg.carters.com is a sustainability report, not a transparency, subprocessor or SBOM
+  artifact. No regime is inferred here.'
+signals:
+  global_privacy_control:
+    honored: true
+    url: https://www.carters.com/customerservice/privacy-policy
+    statement: Some browsers or browser extensions also allow you to tell websites not to share your information
+      for cross-contextual behavioral advertising through the 'global privacy control' signal. We will respond to
+      this signal in a frictionless manner.
+    evidence: published statement in the privacy policy, read 2026-09-19; not set from a Sec-GPC header probe
+  data_subject_request:
+    url: https://privacyportal.onetrust.com/webform/c8e445f2-2518-4426-b49b-47c75e7fff21/94ab12c1-228a-478d-81a0-5fd4ee246d19
+    linked_from: https://www.carters.com/customerservice/privacy-policy
+    note: Carter's Privacy Portal — a OneTrust web form; no request API is documented
+probes:
+- url: https://www.carters.com/accessibility
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/accessibility/vpat
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/legal/subprocessors
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/legal/dpa
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/privacy/requests
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/transparency
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/trust
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/security/sbom
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/ai
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/ai/transparency
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/legal/report-content
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/customerservice/privacy-policy
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/customerservice/terms-and-conditions
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://www.carters.com/eu-privacy-policy.html
+  status: 403
+  note: Cloudflare managed challenge interstitial — page content not readable by an anonymous crawler
+- url: https://corporate.carters.com/accessibility
+  status: 404
+- url: https://corporate.carters.com/transparency
+  status: 404
+- url: https://corporate.carters.com/trust
+  status: 404
+- url: https://corporate.carters.com/legal/subprocessors
+  status: 404
+- url: https://corporate.carters.com/privacy/requests
+  status: 404
+- url: https://esg.carters.com/
+  status: 200
+- url: https://esg.carters.com/2024
+  status: 200
+not_recorded:
+- signal: accessibility_conformance
+  url: https://www.carters.com/customerservice/accessibility-and-inclusion/
+  reason: names WCAG 2.1 as the target of the UserWay widget; no conformance level, VPAT or conformance report —
+    a commitment statement, not a conformance artifact

@@ -31,31 +31,88 @@ tags:
   - Children
   - Apparel
   - Fortune 1000
+  - Ecommerce
+  - No Developer Program
 description: >-
-  Carter's is a major US corporation and Fortune 1000 company. The Carter's API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Carter's, Inc. (NYSE: CRI) is the largest branded marketer of young children's apparel in the
+  United States, selling the Carter's, OshKosh B'gosh, Skip Hop and Little Planet brands through its
+  own stores, carters.com and wholesale partners. It is a physical-goods retailer, not a software
+  company, and publishes no developer program: developer.carters.com has no DNS record,
+  www.carters.com/developers is a 404, and api.carters.com — the storefront's backend host — hard-403s
+  every request. Its only external programs are a CJ affiliate program and privately negotiated EDI
+  trading-partner guidelines. No OpenAPI, AsyncAPI, GraphQL SDL, MCP server, A2A agent card, SDK or
+  package exists, and none has been authored on its behalf; the placeholder "Carter's API" entry that
+  once stood here has been removed. What it does publish is recorded: a privacy policy with a Global
+  Privacy Control commitment and a OneTrust data-subject request portal, terms, customer service, and
+  its IR newsroom.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-19'
 specificationVersion: '0.23'
-apis:
-  - aid: carter:carter-api
-    name: Carter's API
-    tags:
-      - Retail
-      - Children
-      - Apparel
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.carters.com
-    humanURL: https://developer.carters.com
-    properties:
-      - url: https://developer.carters.com/docs
-        type: Documentation
-    description: >-
-      The Carter's API provides access to platform services and data for enterprise integration and automation.
+apis: []
 common:
-  - type: DomainSecurity
-    url: security/carter-domain-security.yml
   - type: Website
     url: https://www.carters.com
+    x-note: >-
+      Cloudflare managed challenge (403, cf-mitigated=challenge) for anonymous crawlers; the storefront
+      renders for a browser-class fetch (probed 2026-09-19).
+  - type: PrivacyPolicy
+    url: https://www.carters.com/customerservice/privacy-policy
+    x-note: >-
+      Read via browser-class fetch 2026-09-19 (heading "Our Privacy Policy"); curl receives the Cloudflare challenge.
+  - type: TermsOfService
+    url: https://www.carters.com/customerservice/terms-and-conditions
+    x-note: >-
+      Read via browser-class fetch 2026-09-19 (heading "TERMS AND CONDITIONS"); no API, developer program
+      or data feed is mentioned.
+  - type: Support
+    url: https://www.carters.com/customerservice/contact-us
+    x-note: >-
+      Customer-service contact page linked from the storefront footer; product support only — there is
+      no developer support channel.
+  - type: Newsroom
+    url: https://ir.carters.com/news-releases
+    x-note: >-
+      Investor-relations press releases (Q4/gcs-web on Akamai). Answers 403 "Access Denied" to our crawler
+      and times out a browser-class fetch, but is search-indexed with dated releases through Q2 fiscal 2026
+      — an edge policy, not a dead page.
+  - type: Leadership
+    url: https://ir.carters.com/corporate-governance/leadership-team
+    x-note: >-
+      Same Akamai edge policy as the newsroom (403 to our crawler); page is search-indexed as
+      "Leadership Team | Carter's, Inc. - Investor Relations".
+  - type: GlobalPrivacyControl
+    name: Privacy policy states the Global Privacy Control signal is honored ("We will respond to this signal in a frictionless manner")
+    url: https://www.carters.com/customerservice/privacy-policy
+  - type: DataSubjectRequest
+    name: Carter's Privacy Portal (OneTrust web form) for privacy-rights requests
+    url: https://privacyportal.onetrust.com/webform/c8e445f2-2518-4426-b49b-47c75e7fff21/94ab12c1-228a-478d-81a0-5fd4ee246d19
+  - type: RegulatoryPosture
+    url: regulatory/carter-regulatory-posture.yml
+  - type: DomainSecurity
+    url: security/carter-domain-security.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-19'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Carter's sells children's apparel; developer.carters.com has no DNS record, www.carters.com/developers
+    is a genuine 404 behind the Cloudflare challenge, api.carters.com hard-403s every request including a
+    browser-class fetch, no GitHub org, SDK or registry package exists, and the only external programs are a
+    CJ affiliate program and privately negotiated EDI trading-partner guidelines.
+  evidence:
+    - url: https://developer.carters.com
+      status: 0
+    - url: https://www.carters.com/developers
+      status: 404
+    - url: https://api.carters.com/openapi.json
+      status: 403
+    - url: https://api.github.com/orgs/carters
+      status: 404
+  checked: '2026-09-19'

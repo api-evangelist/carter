@@ -1,37 +1,44 @@
-specification: API Commons Rate Limits
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+generated: '2026-09-19'
+method: searched
+source: >-
+  Carter's public surface, searched and probed 2026-09-19. No developer documentation exists in which
+  a limit could be published: https://developer.carters.com has no DNS record and
+  https://www.carters.com/developers returns 404.
 provider: Carter's
 providerId: carter
-created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
-tags:
-  - Retail
-  - Children
-  - Apparel
-  - Rate Limiting
-description: Carter's does not publish a public developer portal or rate-limit documentation. Any per-second,
-  per-minute, or quota limits would be defined inside private partner agreements and are not visible
-  externally.
-notes: No public rate-limit documentation. Numeric limits removed; consult Carter's partner / B2B integration
-  team for negotiated throughput.
-sources:
-  - https://www.carters.com
-responseCodes:
-  throttled: 429
-limits:
-  - name: Partner-negotiated limits
-    scope: contract
-    metric: varies
-    limit: see partner agreement
-policies:
-  - name: Backoff
-    description: Clients integrating with Carter's partner systems should implement exponential backoff
-      with jitter and honor any Retry-After header surfaced by upstream gateways.
+description: >-
+  Carter's publishes no rate limits, because it publishes no API. api.carters.com — the storefront's
+  own backend host — refuses every anonymous request with a Cloudflare 403 rather than serving a
+  response an agent could read limits from, so no runtime signal could be observed either. This is an
+  honest zero measured from live responses and a live search, not an unchecked field.
+limit_count: 0
+limits: []
+response_headers:
+  observed: []
+  checked_for: [RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, X-RateLimit-Limit, X-RateLimit-Remaining,
+    X-RateLimit-Reset, Retry-After]
+  note: >-
+    No response bearing any of these headers was obtainable: every request to api.carters.com and
+    www.carters.com is answered by a Cloudflare managed challenge (403, cf-mitigated=challenge)
+    before an application response is produced.
+exhaustion_status: null
+enforcement:
+  documented: false
+  inferred: >-
+    Cloudflare bot management fronts carters.com and api.carters.com and challenges automated clients
+    outright. That is access control, not a published or signalled API rate limit, and is recorded as
+    inference rather than as a limit.
+x-evidence:
+  fetched: '2026-09-19'
+  probes:
+    - {url: 'https://api.carters.com/', status: 403, rate_limit_headers: none}
+    - {url: 'https://api.carters.com/openapi.json', status: 403, rate_limit_headers: none}
+    - {url: 'https://www.carters.com/', status: 403, rate_limit_headers: none}
+    - {url: 'https://developer.carters.com/', status: 0, note: 'NXDOMAIN'}
+note: >-
+  This file previously carried a "Partner-negotiated limits" entry written by the 2026-05-04 bulk
+  sweep, describing throughput under a partner agreement that has no public existence. Replaced with
+  the measured zero.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

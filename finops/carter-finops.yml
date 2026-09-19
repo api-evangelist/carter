@@ -4,23 +4,25 @@ schema: https://www.finops.org/framework/
 provider: Carter's
 providerId: carter
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
+method: derived
+modified: '2026-09-19'
 reconciled: false
 tags:
-  - Retail
-  - Children
-  - Apparel
-  - FinOps
-  - FOCUS
-description: 'FOCUS-aligned FinOps scaffold for Carter''s. No public API pricing or invoice surface is
-  published; meters and FOCUS columns are the recommended starting points for partners that have negotiated
-  private B2B agreements.'
-notes: Billing is private (partner contracts). Reconcile once Carter's publishes API or partner pricing.
+- Retail
+- Children
+- Apparel
+- FinOps
+- FOCUS
+description: FOCUS-aligned FinOps scaffold for Carter's. Carter's publishes no API, no API pricing and no invoice
+  surface — verified 2026-09-19 (developer.carters.com NXDOMAIN, www.carters.com/developers 404, api.carters.com
+  403) — so nothing here is harvested from the provider. The FOCUS columns below are the recommended starting points
+  a buyer would use if Carter's ever published a commercial API surface; they describe no live product.
+notes: No API and no billing surface exists to map. This file previously named a 'Carter's API' service and an api_requests
+  meter, which asserted a product Carter's has never published; both have been corrected to the retail entity and
+  an empty meter list. Reconcile only if Carter's publishes an API or partner pricing schedule.
 sources:
-  - https://www.carters.com
+- https://www.carters.com
+- https://corporate.carters.com
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -30,39 +32,27 @@ alignedWith:
 publisherName: Carter's, Inc.
 serviceCategory: Retail
 billingModel:
-  pricingCategory: Custom (Partner Contract)
+  pricingCategory: None published
   billingFrequency: Per-Contract
   billingCurrency: USD
   chargeCategories:
-    - Purchase
-    - Adjustment
+  - Purchase
+  - Adjustment
 focusColumns:
-  ServiceName: Carter's API
+  ServiceName: null
   ServiceCategory: Retail
   ProviderName: Carter's
   PublisherName: Carter's, Inc.
   InvoiceIssuerName: Carter's, Inc.
   BillingCurrency: USD
-meters:
-  - name: api_requests
-    unit: request
-    aggregation: sum
-    dimensions:
-      - endpoint
-      - partner
+meters: []
 principles:
-  - name: Visibility
-    description: Track partner integration consumption through the negotiated reporting surface delivered
-      with the partner agreement; no public usage API is published.
-  - name: Allocation
-    description: Tag partner integration costs to the consuming retail / supply-chain function before
-      issuing chargeback.
-  - name: Optimization
-    description: Batch catalog and order updates; align polling cadence with Carter's published refresh
-      windows to avoid wasted requests.
-  - name: Accountability
-    description: Assign a procurement and IT owner for the Carter's partner relationship; review invoiced
-      partner fees against contractual SLAs.
+- name: Visibility
+  description: 'Nothing to observe: Carter''s exposes no metered API surface and no usage or billing endpoint.'
+- name: Allocation
+  description: Not applicable — there is no API spend to allocate. Wholesale and EDI costs sit inside privately
+    negotiated trading-partner agreements, not an API bill.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+generated: '2026-09-19'

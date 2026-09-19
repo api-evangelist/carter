@@ -1,0 +1,298 @@
+generated: '2026-09-19'
+method: probed
+source: live GET of the closed well-known path list on every host apis.yml knows (registrable domain, www, api baseURL
+  host, developer humanURL host, corporate site); browser User-Agent; 2026-09-19
+hit_count: 0
+note: 'No /.well-known/ document is served on any Carter''s host. developer.carters.com has no DNS record (NXDOMAIN);
+  carters.com 301s every path to www.carters.com; www.carters.com and api.carters.com answer every path with a Cloudflare
+  managed challenge (403, cf-mitigated: challenge) rather than a document; corporate.carters.com (Webflow) answers
+  404 for every path. Every probed path was recorded, including the negative control. No WellKnown or SecurityTxt
+  pointer is emitted — this file documents an absence.'
+hosts:
+- host: https://carters.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/security.txt
+  - path: /.well-known/openid-configuration
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/oauth-authorization-server
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/api-catalog
+  - path: /.well-known/api-catalog.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/api-catalog.json
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/ai-plugin.json
+  - path: /.well-known/ucp.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/ucp.json
+  - path: /.well-known/acp.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/acp.json
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/aauth-resource.json
+  - path: /.well-known/apis.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/apis.json
+  - path: /apis.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/apis.json
+  - path: /apis.yml
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/apis.yml
+  - path: /.well-known/agent-card.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/agent-card.json
+  - path: /.well-known/agent.json
+    status: 301
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/agent.json
+  - path: /.well-known/carter-negative-control-<random>.json
+    status: 301
+    control: true
+    content_type: text/html
+    redirect: https://www.carters.com/.well-known/carter-negative-control-zhfbwiv6.json
+- host: https://www.carters.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/openid-configuration
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/api-catalog
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/api-catalog.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/ucp.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/acp.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/aauth-resource.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/apis.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /apis.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /apis.yml
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/agent-card.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/agent.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/carter-negative-control-<random>.json
+    status: 403
+    control: true
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+- host: https://api.carters.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/openid-configuration
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/api-catalog
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/api-catalog.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/ucp.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/acp.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/aauth-resource.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/apis.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /apis.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /apis.yml
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/agent-card.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/agent.json
+    status: 403
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+  - path: /.well-known/carter-negative-control-<random>.json
+    status: 403
+    control: true
+    content_type: text/html
+    note: 'Cloudflare managed challenge (cf-mitigated: challenge) — ''Just a moment...'' interstitial, not a document'
+- host: https://developer.carters.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/openid-configuration
+    status: 0
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+  - path: /.well-known/oauth-protected-resource
+    status: 0
+  - path: /.well-known/api-catalog
+    status: 0
+  - path: /.well-known/api-catalog.json
+    status: 0
+  - path: /.well-known/ai-plugin.json
+    status: 0
+  - path: /.well-known/ucp.json
+    status: 0
+  - path: /.well-known/acp.json
+    status: 0
+  - path: /.well-known/aauth-resource.json
+    status: 0
+  - path: /.well-known/apis.json
+    status: 0
+  - path: /apis.json
+    status: 0
+  - path: /apis.yml
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /.well-known/agent.json
+    status: 0
+  - path: /.well-known/carter-negative-control-<random>.json
+    status: 0
+    control: true
+- host: https://corporate.carters.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ucp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/acp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.yml
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/carter-negative-control-<random>.json
+    status: 404
+    control: true
+    content_type: text/html

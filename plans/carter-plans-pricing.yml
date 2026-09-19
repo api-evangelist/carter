@@ -1,45 +1,39 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+generated: '2026-09-19'
+method: searched
+source: >-
+  Carter's public surface, searched and probed 2026-09-19: https://www.carters.com (Cloudflare
+  challenge to crawlers, readable by a browser-class fetch), https://corporate.carters.com (200),
+  https://www.carters.com/developers (404), https://developer.carters.com (no DNS record). No
+  developer, API or partner pricing page exists on any Carter's host.
 provider: Carter's
 providerId: carter
-created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
-tags:
-  - Retail
-  - Children
-  - Apparel
-description: Carter's, Inc. is a children's apparel retailer. No public developer portal or API pricing
-  page is published for the carter slug; the developer.carters.com host referenced in apis.yml does not
-  resolve. Any partner / EDI / B2B integration pricing is negotiated privately with Carter's enterprise
-  IT and supply-chain teams.
-notes: No public API pricing exists. Plan is a single placeholder for partner-negotiated access. Replace
-  with reconciled values once Carter's publishes a developer portal or partner pricing schedule.
-sources:
-  - https://www.carters.com
-plans:
-  - id: carter-partner
-    name: Partner / Enterprise (Contact Sales)
-    type: enterprise
-    description: Privately negotiated B2B / EDI / partner integration access to Carter's systems.
-    entries:
-      - label: Partner integration access
-        name: partner_access
-        type: subscription
-        metric: contract
-        limit: -1
-        timeFrame: month
-        geo: US
-        unit: 1
-        price: contact sales
-        userMultiplied: false
-    elements:
-      - name: Negotiated partner agreement
-      - name: Carter's API
+description: >-
+  Carter's publishes no API plans or API pricing, because it publishes no API. It is a children's
+  apparel retailer; the only prices on its public surface are retail product prices in its
+  storefront. The two external programs it does run are commercial relationships, not API plans:
+  a CJ-operated affiliate program (commission-based, rate set per partner on approval) and EDI
+  trading-partner integration governed by privately negotiated wholesale agreements. Neither
+  publishes a tier, a quota, an overage rate or a machine-readable price.
+plan_count: 0
+pricing_model: none published — no API product exists
+currency: null
+free_tier: false
+trial: null
+plans: []
+probes:
+  - url: https://www.carters.com/developers
+    status: 404
+  - url: https://developer.carters.com
+    status: 0
+    note: NXDOMAIN — no DNS record
+  - url: https://corporate.carters.com
+    status: 200
+    note: Webflow corporate site — brands, community, careers, ESG and IR links only; no pricing or developer page.
+note: >-
+  plan_count 0 is the measurement. This file previously carried a single fabricated
+  "Partner / Enterprise (Contact Sales)" plan written by the 2026-05-04 bulk sweep, which asserted a
+  partner API access product Carter's has never published. It has been removed rather than carried
+  forward: an invented tier is worse than an honest zero.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
