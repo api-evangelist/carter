@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/carter/integrations
+- https://zapier.com/apps/carter-s/integrations
+- https://n8n.io/integrations/carter/
+- https://composio.dev/toolkits/carter
+- https://monid.ai/tools/carter
+checked:
+- https://composio.dev/toolkits/carter
+- https://monid.ai/tools/carter
+- https://n8n.io/integrations/carter/
+- https://zapier.com/apps/carter-s/integrations
+- https://zapier.com/apps/carter/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
