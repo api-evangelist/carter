@@ -1,4 +1,4 @@
-# Carter's (carter)
+# Carter's
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,23 +64,100 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Carter's is a major US corporation and Fortune 1000 company. The Carter's API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+Carter's, Inc. (NYSE: CRI) is the largest branded marketer of young children's apparel in the United States, selling the Carter's, OshKosh B'gosh, Skip Hop and Little Planet brands through its own stores, carters.com and wholesale partners. It is a physical-goods retailer, not a software company, and publishes no developer program: developer.carters.com has no DNS record, www.carters.com/developers is a 404, and api.carters.com — the storefront's backend host — hard-403s every request. Its only external programs are a CJ affiliate program and privately negotiated EDI trading-partner guidelines. No OpenAPI, AsyncAPI, GraphQL SDL, MCP server, A2A agent card, SDK or package exists, and none has been authored on its behalf; the placeholder "Carter's API" entry that once stood here has been removed. What it does publish is recorded: a privacy policy with a Global Privacy Control commitment and a OneTrust data-subject request portal, terms, customer service, and its IR newsroom.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/carter/refs/heads/main/apis.yml)
+**Areas:** Retail · Children · Apparel · Fortune 1000 · E-Commerce · No Developer Program
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Carter's on APIs.io
 
-## Tags:
+Everything profiled for Carter's is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/carter/](https://apis.io/providers/carter/)** — or go straight to one of the APIs or properties below.
 
- - Retail, Children, Apparel
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+#### Security (1)
 
-## Maintainers
+Authentication, trust centre, and vulnerability disclosure.
 
-**FN:** Kin Lane
+- [Carter Domain Security](https://apis.io/security/carter/carter-domain-security/)
 
-**Email:** kin@apievangelist.com
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Carter Plans Pricing](https://apis.io/plans/carter/carter-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Carter Rate Limits](https://apis.io/rate-limits/carter/carter-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Carter Finops](https://apis.io/finops/carter/carter-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.carters.com)
+- [Support](https://www.carters.com/customerservice/contact-us)
+- [Terms of service](https://www.carters.com/customerservice/terms-and-conditions)
+- [Privacy policy](https://www.carters.com/customerservice/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 11.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 50.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/carter/](https://apis.io/providers/carter/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Carter's: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/carter/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
